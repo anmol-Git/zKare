@@ -1,0 +1,50 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_OPTIONS='--max-http-header-size=24576' next dev -p 3000 & nodemon --watch ../src/ZKare.sol --exec ' yarn deploy-zkare && sleep 3 && ./script/log.sh'",
+    "build": "next build",
+    "start": "NODE_OPTIONS='--max-http-header-size=24576' next start",
+    "lint": "next lint",
+    "deploy-zkare": "forge script DeployZKare --rpc-url http://localhost:8545 -vv --mnemonics 'test test test test test test test test test test test junk' --sender '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266' --broadcast &&  ./script/generate-abi-from-front.sh"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.7.16",
+    "@canvasjs/charts": "^3.7.9",
+    "@canvasjs/react-charts": "^1.0.0",
+    "@eonasdan/tempus-dominus": "^6.7.7",
+    "@ethereum-attestation-service/eas-contracts": "^0.28.1",
+    "@ethereum-attestation-service/eas-sdk": "^0.29.0",
+    "@nextui-org/react": "^1.0.0-beta.13",
+    "@sismo-core/sismo-connect-react": "0.0.15",
+    "@types/node": "20.2.3",
+    "@types/react": "18.2.7",
+    "@types/react-dom": "18.2.4",
+    "bulma": "^0.9.4",
+    "chart.js": "^4.3.0",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.3",
+    "ethers": "5.7.2",
+    "graphql": "^16.7.1",
+    "next": "13.4.3",
+    "nodemon": "^2.0.22",
+    "performance-now": "^2.1.0",
+    "react": "18.2.0",
+    "react-bulma-components": "4.1.0",
+    "react-calendar-datetime-picker": "^1.6.3",
+    "react-chartjs-2": "^5.2.0",
+    "react-charts": "^2.0.0-beta.7",
+    "react-datetime-picker": "^5.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.45.0",
+    "typescript": "5.0.4",
+    "viem": "^0.3.24",
+    "wagmi": "^1.0.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2"
+  }
+}

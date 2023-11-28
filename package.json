@@ -1,0 +1,16 @@
+{
+  "name": "sismo-connect-onchain-tutorial",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "anvil": "anvil --fork-url https://goerli.optimism.io --chain-id 420",
+    "deploy-local": "yarn deploy-zkare && yarn generate-abi",
+    "generate-abi": "front/script/generate-abi.sh",
+    "deploy-zkare": "forge script DeployZKare --rpc-url http://localhost:8545 -vv --mnemonics 'test test test test test test test test test test test junk' --sender '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266' --broadcast",
+    "test": "forge test --fork-url https://goerli.optimism.io"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "react-datetime": "^3.2.0"
+  }
+}
